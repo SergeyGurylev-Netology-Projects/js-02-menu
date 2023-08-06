@@ -9,8 +9,14 @@ function onClickMenuLink() {
         if (activeMenuSub) {
             activeMenuSub.className = 'menu menu_sub';
         }
-        menuSub.className = 'menu menu_sub menu_active';
-        activeMenuSub = menuSub;
+
+        if (menuSub === activeMenuSub) {
+            activeMenuSub = null;
+        } else {
+            menuSub.className = 'menu menu_sub menu_active';
+            activeMenuSub = menuSub;
+        }
+
         return false;
     }
 }
